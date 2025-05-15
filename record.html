@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记账网站 - 记录消费</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>记账本</h1>
+        <nav>
+            <a href="index.html">首页设置</a>
+            <a href="record.html" class="active">记录消费</a>
+            <a href="summary.html">消费总结</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="record-expense-section">
+            <h2>记录消费</h2>
+            <div>
+                <label for="expense-date">日期:</label>
+                <input type="date" id="expense-date">
+            </div>
+            <div>
+                <label for="expense-category">类别:</label>
+                <select id="expense-category">
+                    <option value="food">食</option>
+                    <option value="clothing">衣</option>
+                    <option value="housing">住</option>
+                    <option value="transport">行</option>
+                    <option value="learning">学</option>
+                    <option value="entertainment">娱</option>
+                    <!-- 储蓄通常不是日常消费，但可以根据需要添加 -->
+                </select>
+            </div>
+            <div>
+                <label for="expense-amount">金额 (元):</label>
+                <input type="number" id="expense-amount" placeholder="例如: 50">
+            </div>
+            <div>
+                <label for="expense-description">备注:</label>
+                <input type="text" id="expense-description" placeholder="例如: 午餐">
+            </div>
+            <button id="add-expense">添加消费</button>
+        </section>
+
+        <section id="budget-status-section">
+            <h2>当前预算状态</h2>
+            <div id="budget-status-container">
+                <!-- 预算状态和进度条将由 JavaScript 动态生成 -->
+                <p>请先在首页设置预算。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 记账网站</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

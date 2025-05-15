@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记账网站 - 消费总结</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 如果使用图表库，在这里引入 -->
+    <!-- <script src="js/chart-lib.js"></script> -->
+</head>
+<body>
+    <header>
+        <h1>记账本</h1>
+        <nav>
+            <a href="index.html">首页设置</a>
+            <a href="record.html">记录消费</a>
+            <a href="summary.html" class="active">消费总结</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="monthly-summary-section">
+            <h2>本月消费总结</h2>
+            <div id="summary-overview">
+                <p>总收入: <span id="summary-total-income">N/A</span> 元</p>
+                <p>总支出: <span id="summary-total-expense">N/A</span> 元</p>
+                <p>总结余: <span id="summary-total-remaining">N/A</span> 元</p>
+            </div>
+            <h3>各类别支出占比</h3>
+            <div id="category-summary-container">
+                <!-- 各类别支出详情将由 JavaScript 动态生成 -->
+            </div>
+            <div id="chart-container">
+                <!-- 图表将在这里显示 -->
+                <canvas id="expense-chart"></canvas>
+            </div>
+            <div id="summary-suggestions">
+                <h4>消费建议</h4>
+                <p id="suggestion-text">暂无建议。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 记账网站</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>

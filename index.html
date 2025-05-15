@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记账网站 - 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>智能预算助手</h1>
+        <nav>
+            <a href="index.html" class="active">首页设置</a>
+            <a href="record.html">记录消费</a>
+            <a href="summary.html">消费总结</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="setup-section">
+            <h2>初始设置</h2>
+            <div>
+                <label for="monthly-income">每月收入 (元):</label>
+                <input type="number" id="monthly-income" placeholder="例如: 5000">
+            </div>
+
+            <h3>预算分配</h3>
+            <div class="budget-categories">
+                <!-- 食 -->
+                <div class="budget-category-item">
+                    <label for="slider-food">食:</label>
+                    <input type="range" id="slider-food" data-category="food" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-food">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-food"></span>
+                </div>
+                <!-- 衣 -->
+                <div class="budget-category-item">
+                    <label for="slider-clothing">衣:</label>
+                    <input type="range" id="slider-clothing" data-category="clothing" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-clothing">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-clothing"></span>
+                </div>
+                <!-- 住 -->
+                <div class="budget-category-item">
+                    <label for="slider-housing">住:</label>
+                    <input type="range" id="slider-housing" data-category="housing" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-housing">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-housing"></span>
+                </div>
+                <!-- 行 -->
+                <div class="budget-category-item">
+                    <label for="slider-transport">行:</label>
+                    <input type="range" id="slider-transport" data-category="transport" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-transport">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-transport"></span>
+                </div>
+                <!-- 学 -->
+                <div class="budget-category-item">
+                    <label for="slider-learning">学:</label>
+                    <input type="range" id="slider-learning" data-category="learning" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-learning">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-learning"></span>
+                </div>
+                <!-- 娱 -->
+                <div class="budget-category-item">
+                    <label for="slider-entertainment">娱:</label>
+                    <input type="range" id="slider-entertainment" data-category="entertainment" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-entertainment">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-entertainment"></span>
+                </div>
+                <!-- 储蓄 -->
+                <div class="budget-category-item">
+                    <label for="slider-savings">储蓄:</label>
+                    <input type="range" id="slider-savings" data-category="savings" class="budget-percentage-slider" min="0" max="100" value="0">
+                    <span class="percentage-display" id="percentage-display-savings">0</span>%
+                    <span class="actual-budget-display" id="actual-budget-savings"></span>
+                </div>
+            </div>
+            <div class="total-percentage-container">
+                <span>总计: <span id="total-percentage-value">0</span>%</span>
+                <div class="progress-bar-container total-progress-bar-container">
+                    <div class="progress-bar" id="total-percentage-bar" style="width: 0%;"></div>
+                </div>
+            </div>
+            <p>提示: 各类别预算占比总和必须为 100% 才能保存。</p>
+            <button id="save-setup">保存设置</button>
+            <button id="quick-setup">快速设置示例</button>
+        </section>
+
+        <section id="overview-section">
+            <h2>预算概览</h2>
+            <!-- 预算概览将由 JavaScript 动态生成 -->
+            <div id="budget-overview-container">
+                <p>请先完成初始设置。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 记账网站</p>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
