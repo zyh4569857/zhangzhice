@@ -1,0 +1,630 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Apple-like font stack */
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f7; /* Apple's light gray background */
+    color: #1d1d1f; /* Apple's primary dark text color */
+    line-height: 1.5; /* Adjusted for better readability */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+header {
+    background-color: #ffffff; /* White header, common in modern Apple UI */
+    color: #1d1d1f;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #d2d2d7; /* Subtle border */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* Very subtle shadow */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.75rem; /* Slightly reduced for a cleaner look */
+    font-weight: 600; /* Semi-bold */
+}
+
+nav {
+    margin-top: 0.75rem;
+}
+
+nav a {
+    color: #007aff; /* Apple blue for interactive elements */
+    text-decoration: none;
+    margin: 0 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 7px; /* Apple's rounded corners */
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+nav a.active, nav a:hover {
+    background-color: #007aff;
+    color: #ffffff;
+}
+
+main {
+    padding: 1.5rem; /* Increased padding */
+    max-width: 800px; /* Slightly narrower for better focus on content */
+    margin: 30px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Softer, more diffused shadow */
+    border-radius: 12px; /* More pronounced rounded corners */
+}
+
+section {
+    margin-bottom: 2.5rem; /* Increased spacing between sections */
+    padding: 0; /* Remove padding here, apply to inner elements if needed */
+    border: none; /* Remove section borders for a cleaner look */
+    /* border-radius: 0; */ /* Remove if sections are not visually distinct cards */
+}
+
+section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem; /* Space below heading */
+    color: #1d1d1f;
+    border-bottom: 1px solid #e5e5ea; /* Lighter, more subtle separator */
+    padding-bottom: 0.75rem;
+    font-size: 1.5rem; /* Adjusted size */
+    font-weight: 600;
+}
+
+section h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #3c3c43; /* Slightly lighter dark gray */
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500; /* Medium weight */
+    font-size: 0.9rem;
+    color: #3c3c43;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%; /* Let it take full width of container */
+    padding: 12px 15px; /* Increased padding for better touch/click targets */
+    margin-bottom: 1.25rem; /* More space below inputs */
+    border: 1px solid #c6c6c8; /* Apple-like input border color */
+    border-radius: 7px; /* Apple's rounded corners */
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #f8f8f8; /* Slightly off-white background for inputs */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: #007aff; /* Apple blue focus ring */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15); /* Subtle focus glow */
+}
+
+/* Remove old budget-categories styles if they conflict */
+/* .budget-categories div {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.budget-categories label {
+    width: 50px; 
+    margin-right: 10px;
+    margin-bottom: 0; 
+}
+
+.budget-categories input[type="number"] {
+    width: 80px;
+    margin-right: 5px;
+    margin-bottom: 0; 
+}
+
+.budget-categories span {
+    margin-left: 10px;
+    font-style: italic;
+    color: #555;
+} */
+
+.budget-category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0; /* Light separator line like in the image */
+}
+
+.budget-category-item:last-child {
+    border-bottom: none;
+}
+
+.budget-category-item label {
+    width: 60px; /* Adjust as needed */
+    min-width: 60px;
+    margin-right: 15px;
+    font-weight: normal; /* Less bold than default label */
+    color: #555;
+}
+
+input[type="range"].budget-percentage-slider {
+    flex-grow: 1;
+    margin-right: 15px;
+    /* Basic styling, can be customized further */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%; /* Full width within its flex item */
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+input[type="range"].budget-percentage-slider:hover {
+    opacity: 1;
+}
+
+input[type="range"].budget-percentage-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #007bff; /* Blue thumb like in image */
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white; /* White border around thumb */
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+input[type="range"].budget-percentage-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.percentage-display {
+    width: 40px; /* Fixed width for percentage text */
+    text-align: right;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.actual-budget-display {
+    min-width: 80px; /* Space for (￥XXX.XX) */
+    font-size: 0.9em;
+    color: #777;
+    text-align: right;
+}
+
+.total-percentage-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #e9f5ff; /* Light blue background like in image */
+    border-radius: 5px;
+}
+
+.total-percentage-container span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#total-percentage-value {
+    /* Style for the number itself if needed */
+}
+
+.total-progress-bar-container {
+    height: 15px; /* Adjust height */
+}
+
+#total-percentage-bar {
+    background-color: #28a745; /* Green progress bar */
+    height: 100%;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 15px; /* Match container height */
+    color: white;
+    font-size: 0.8em;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#total-percentage-bar.invalid {
+    background-color: #dc3545; /* Red if total is not 100% */
+}
+
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+#quick-setup {
+    background-color: #007bff;
+}
+#quick-setup:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* Budget Allocation Section - index.html */
+.budget-categories {
+    margin-top: 1rem;
+}
+
+.budget-category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0; /* Remove bottom margin, use padding and borders */
+    padding: 1rem 0; /* Vertical padding for spacing */
+    border-bottom: 1px solid #e5e5ea; /* Very light separator */
+}
+
+.budget-category-item:last-child {
+    border-bottom: none;
+}
+
+.budget-category-item label {
+    width: 70px; /* Slightly more space for label */
+    min-width: 70px;
+    margin-right: 1rem;
+    font-weight: 400; /* Regular weight */
+    color: #3c3c43; /* Slightly lighter text for labels */
+    font-size: 0.95rem;
+}
+
+input[type="range"].budget-percentage-slider {
+    flex-grow: 1;
+    margin-right: 1rem;
+    height: 6px; /* Slimmer slider track */
+    background: #e5e5ea; /* Light gray track */
+    border-radius: 3px;
+}
+
+input[type="range"].budget-percentage-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px; /* Larger thumb for easier interaction */
+    height: 22px;
+    background: #ffffff; /* White thumb */
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #d2d2d7; /* Subtle border for thumb */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15); /* Subtle shadow for thumb */
+    transition: transform 0.1s ease-in-out;
+}
+input[type="range"].budget-percentage-slider::-webkit-slider-thumb:active {
+    transform: scale(1.1); /* Slight scale on active */
+}
+
+input[type="range"].budget-percentage-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #d2d2d7;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+
+.percentage-display {
+    width: 45px; 
+    text-align: right;
+    margin-right: 0.25rem; /* Closer to '%' sign */
+    font-weight: 500; /* Medium weight for percentage value */
+    color: #1d1d1f;
+    font-size: 0.95rem;
+}
+
+.actual-budget-display {
+    min-width: 90px; 
+    font-size: 0.85rem;
+    color: #636366; /* Lighter gray for less prominent info */
+    text-align: right;
+}
+
+/* Total Percentage Container - index.html */
+.total-percentage-container {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem; /* More padding */
+    background-color: #f2f2f7; /* Slightly different light gray */
+    border-radius: 10px; /* Consistent rounding */
+}
+
+.total-percentage-container > span { /* Direct child span for "总计" */
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600; /* Bolder for "总计" */
+    font-size: 1rem;
+    color: #1d1d1f;
+}
+
+#total-percentage-value {
+    font-weight: 600; /* Ensure the number is also bold */
+}
+
+.total-progress-bar-container { /* Re-use general progress bar styles */
+    height: 8px; /* Slimmer progress bar */
+    background-color: #e5e5ea; /* Track color */
+    border-radius: 4px;
+}
+
+#total-percentage-bar {
+    background-color: #007aff; /* Blue for the total bar, can change based on validity */
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    /* Remove text from here if not needed, or style it better */
+    line-height: 8px; /* Match container height */
+    font-size: 0; /* Hide percentage text if it's redundant */
+}
+
+#total-percentage-bar.invalid {
+    background-color: #ff3b30; /* Apple Red for invalid total */
+}
+
+
+button {
+    background-color: #007aff; /* Apple blue for primary actions */
+    color: white;
+    padding: 12px 20px; /* Generous padding */
+    border: none;
+    border-radius: 7px; /* Apple's rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500; /* Medium weight */
+    margin-right: 10px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+}
+
+button:hover {
+    background-color: #005ecb; /* Darker blue on hover */
+}
+button:active {
+    background-color: #004a9e; /* Even darker on active */
+    transform: scale(0.98); /* Subtle press effect */
+}
+
+
+#quick-setup {
+    background-color: #f2f2f7; /* Secondary button style - light gray */
+    color: #007aff; /* Blue text */
+    border: 1px solid #007aff; /* Optional: blue border */
+}
+#quick-setup:hover {
+    background-color: #e5e5ea; /* Slightly darker gray on hover */
+}
+#quick-setup:active {
+    background-color: #dcdce0;
+    transform: scale(0.98);
+}
+
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem; /* Increased padding */
+    background-color: #f8f8f8; /* Lighter footer */
+    color: #636366; /* Softer text color */
+    margin-top: 3rem; /* More space above footer */
+    font-size: 0.85rem;
+    border-top: 1px solid #e5e5ea;
+}
+
+/* Budget Overview Section & Budget Status Section (Shared Styles) */
+#overview-section h2, #budget-status-section h2, #monthly-summary-section h2 { /* Target all main section titles */
+    margin-top: 0; /* Already handled by section's h2 style */
+}
+
+#budget-overview-container .category-overview,
+#budget-status-container .category-status {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem; /* Adjusted padding */
+    background-color: #f9f9f9; /* Light background for each item, or #ffffff if main bg is #f2f2f7 */
+    border-radius: 10px; /* Consistent rounding */
+    border: 1px solid #e5e5ea; /* Subtle border */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04); /* Very subtle shadow for cards */
+}
+#budget-overview-container .category-overview h4,
+#budget-status-container .category-status h4 {
+    font-size: 1.05rem; /* Slightly smaller for card titles */
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    color: #1d1d1f;
+}
+#budget-overview-container .category-overview p,
+#budget-status-container .category-status p {
+    font-size: 0.9rem;
+    color: #3c3c43;
+    margin-bottom: 0.35rem;
+}
+#budget-overview-container .category-overview p:last-of-type, /* Reduce margin for last p before progress bar */
+#budget-status-container .category-status p:last-of-type {
+    margin-bottom: 0.75rem;
+}
+
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e5e5ea; /* Lighter track color */
+    border-radius: 5px; /* Rounded track */
+    margin-bottom: 0.5rem;
+    height: 10px; /* Slimmer progress bar */
+    position: relative;
+    overflow: hidden; /* Ensure progress bar stays within rounded corners */
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 5px; /* Match container */
+    text-align: right; /* Align text to the right if shown */
+    padding-right: 8px; /* Padding for text inside bar */
+    line-height: 10px; /* Match container height */
+    color: white;
+    font-size: 0.75em; /* Smaller text */
+    font-weight: 500;
+    transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.3s ease-in-out; /* Smoother transition */
+    /* Default Green */
+    background-color: #34c759; /* Apple Green */
+}
+
+.progress-bar.warning {
+    background-color: #ffcc00; /* Apple Yellow */
+    color: #1d1d1f; /* Darker text on yellow for contrast */
+}
+
+.progress-bar.danger {
+    background-color: #ff3b30; /* Apple Red */
+}
+
+/* Summary Page Specifics */
+#summary-overview p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1d1d1f;
+}
+#summary-overview p span {
+    font-weight: 500;
+    color: #007aff; /* Highlight numbers with accent color */
+}
+#summary-overview p #summary-total-remaining.negative { /* Example if you add class for negative remaining */
+    color: #ff3b30; /* Red for negative values */
+}
+
+
+#category-summary-container div {
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f2f2f7; /* Very light separator for list items */
+}
+#category-summary-container div:last-child {
+    border-bottom: none;
+}
+#category-summary-container strong {
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+#chart-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #e5e5ea;
+}
+
+#summary-suggestions {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #e9f5ff; /* Light blue for suggestions, similar to info callouts */
+    border-radius: 10px;
+    border: 1px solid #cce5ff; /* Border for the callout */
+}
+#summary-suggestions h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #004085; /* Darker blue for suggestion title */
+    font-size: 1.1rem;
+}
+#summary-suggestions p {
+    font-size: 0.95rem;
+    color: #004085;
+    line-height: 1.6;
+}
+
+/* Income Level Suggestions Section */
+#income-suggestions-section {
+    margin-top: 2.5rem;
+}
+
+#income-suggestions-section h2 {
+    /* Styles from existing section h2 should apply */
+}
+
+#income-level-suggestions-container .income-suggestion-level {
+    background-color: #f9f9f9; /* Light background for each level block */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#income-level-suggestions-container .income-suggestion-level h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #0056b3; /* A slightly different color for suggestion titles */
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 0.5rem;
+}
+
+#income-level-suggestions-container .suggestion-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 1rem;
+}
+
+#income-level-suggestions-container .suggestion-category-item {
+    padding: 0.75rem;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+}
+
+#income-level-suggestions-container .suggestion-category-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+#income-level-suggestions-container .suggestion-category-item p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Negative balance on summary page */
+#summary-total-remaining.negative {
+    color: #ff3b30; /* Apple Red or your preferred error color */
+    font-weight: bold;
+}
